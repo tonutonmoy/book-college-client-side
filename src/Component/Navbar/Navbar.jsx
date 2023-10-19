@@ -3,24 +3,20 @@ import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import UseSingleUser from "../../Hooks/useSingleUser";
 
 
 const Navbar = () => {
 
 
-    const [data, setData] = useState();
+   
     const { user, setCollegeData, logOut } = useContext(AuthContext);
 
     const navigate = useNavigate()
+    const [data,profileRefetch]=UseSingleUser(user?.email)
 
-
-    useEffect(() => {
-
-        fetch(`https://booking-college-server-side.vercel.app/allUsers?email=${user?.email}`)
-            .then(a => a.json())
-            .then(a => setData(a))
-            .catch(error => console.log(error))
-    }, [user]);
+    profileRefetch()
+  
 
 
     const search = (e) => {
@@ -66,6 +62,8 @@ const Navbar = () => {
         <Link className="md:mx-5 font-[500] text-[17px] mt-3 md:text-white" to='admission'>Admission</Link>
        {
         user &&  <Link className="mx-10 font-[500] text-[17px] mt-3 text-white " to='myCollege'>My College</Link>
+       }
+       { user &&  <Link className="mx-10 font-[500] text-[17px] mt-3 text-white " to='profile'>My Profile</Link>
        }
 
         {

@@ -10,6 +10,7 @@ import Profile from "../Component/Profile/Profile";
 import MyCollege from "../Component/MyCollege/MyCollege";
 
 import NotFound from "../Component/MyCollege/NotFound/NotFound";
+import PrivateRoute from "../PrivateRoute/PrivateRoute ";
 
 export const router = createBrowserRouter([
     {
@@ -43,22 +44,28 @@ export const router = createBrowserRouter([
             },
             {
                 path: '/profile',
-                element: 
-                    
+                element:
+                    <PrivateRoute>
                         <Profile></Profile>
-                    
-                
+                    </PrivateRoute>
+
+
+
 
 
             },
             {
                 path: '/myCollege',
-                element: <MyCollege></MyCollege>
+                element:
+                    <PrivateRoute>
+                        <MyCollege></MyCollege>
+                    </PrivateRoute>
+
             },
             {
-                path:'*',
-                element:<NotFound></NotFound>
-              }
+                path: '*',
+                element: <NotFound></NotFound>
+            }
         ]
     },
 ]);

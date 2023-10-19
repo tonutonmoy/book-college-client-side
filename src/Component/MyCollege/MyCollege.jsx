@@ -48,7 +48,7 @@ const MyCollege = () => {
             .then(res => res.json())
             .then((res) => {
 
-                if (res?.insertedId) {
+                if (res) {
 
                     toast.success("Review done")
 

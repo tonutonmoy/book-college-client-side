@@ -33,6 +33,29 @@ const Admission = () => {
     const submitForm = () => {
 
 
+        if(!name.current.value){
+
+            return toast.error("Name in missing")
+        }
+        else if(!email.current.value){
+            return toast.error("email in missing")
+        }
+        else if(!birth.current.value){
+            return toast.error("birth in missing")
+        }
+        else if(!address.current.value){
+            return toast.error("address in missing")
+        }
+        else if(!subject.current.value){
+            return toast.error("subject in missing")
+        }
+        else if(!number.current.value){
+            return toast.error("number in missing")
+        }
+        else if(!image.current.value){
+            return toast.error("image in missing")
+        }
+
         const info = {
             name: name.current.value,
             email: email.current.value,
@@ -58,7 +81,7 @@ const Admission = () => {
             .then(res => res.json())
             .then((res) => {
 
-                if (res?.insertedId) {
+                if (res) {
 
                     toast.success("submit done")
 
@@ -191,7 +214,7 @@ const Admission = () => {
                             <p className=" text-center my-2">
                                 <span className="font-[500] text-[17px]  ">Candidate image</span>
                             </p>
-                            <input type="text" placeholder="image" ref={image} className="input input-bordered" />
+                            <input type="text" placeholder="image" ref={image}  className="input input-bordered" />
                         </div>
 
 

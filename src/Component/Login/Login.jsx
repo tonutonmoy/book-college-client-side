@@ -1,5 +1,5 @@
 
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { BsGoogle, BsFacebook } from 'react-icons/bs';
 
 import { ToastContainer, toast } from 'react-toastify';
@@ -9,7 +9,7 @@ import { AuthContext } from '../../Provider/AuthProvider';
 
 const Login = () => {
 
-
+  const navigate=useNavigate()
     
     const { login, googleLogin,resetPassword,facebookLogin } = useContext(AuthContext);
 
@@ -29,7 +29,7 @@ const Login = () => {
                 console.log(a)
 
                 e.target.reset()
-                window.location.reload()
+                navigate('/')
                
 
             })
@@ -65,12 +65,12 @@ const Login = () => {
                    .then(res => res.json())
                    .then((res) => {
 
-                       if (res?.insertedId) {
+                       if (res) {
 
                            toast.success("login done")
 
                            console.log(res)
-                           window.location.reload()
+                           navigate('/')
                            
                        }
                        else if (res?.message) {
@@ -119,12 +119,12 @@ const Login = () => {
                .then(res => res.json())
                .then((res) => {
 
-                   if (res?.insertedId) {
+                   if (res) {
 
                        toast.success("login done")
 
                        console.log(res)
-                       window.location.reload()
+                       navigate('/')
                        
                    }
                    else if (res?.message) {

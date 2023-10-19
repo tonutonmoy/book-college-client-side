@@ -1,5 +1,5 @@
 import { useForm } from 'react-hook-form';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { BsGoogle, BsFacebook } from 'react-icons/bs';
 import { useContext } from 'react';
 import { AuthContext } from '../../Provider/AuthProvider';
@@ -8,6 +8,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const Registration = () => {
+    const navigate=useNavigate()
 
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
 
@@ -36,13 +37,14 @@ const Registration = () => {
                             .then(res => res.json())
                             .then((res) => {
 
-                                if (res?.insertedId) {
+                                if (res) {
 
                                     toast.success("Registration done")
 
                                     console.log(res)
                                     reset()
-                                    window.location.reload()
+                                    
+                                    navigate('/')
                                 }
 
 
@@ -90,12 +92,12 @@ const Registration = () => {
                     .then(res => res.json())
                     .then((res) => {
 
-                        if (res?.insertedId) {
+                        if (res) {
 
                             toast.success("Registration done")
 
                             console.log(res)
-                            window.location.reload()
+                            navigate('/')
                             
                         }
                         else if (res?.message) {
@@ -150,12 +152,12 @@ const Registration = () => {
                .then(res => res.json())
                .then((res) => {
 
-                   if (res?.insertedId) {
+                   if (res) {
 
                        toast.success("Registration done")
 
                        console.log(res)
-                       window.location.reload()
+                       navigate('/')
                        
                    }
                    else if (res?.message) {

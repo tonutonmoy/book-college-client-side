@@ -4,6 +4,8 @@ import { AuthContext } from '../../Provider/AuthProvider';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+import UseSingleUser from '../../Hooks/useSingleUser';
+
 
 
 const Profile = () => {
@@ -12,44 +14,44 @@ const Profile = () => {
 
     const { user } = useContext(AuthContext);
 
-     const [data,setData]=useState()
+   
+    const [data,profileRefetch]=UseSingleUser(user?.email)
 
-    useEffect(() => {
+    
 
+    const onSubmit = info => {
 
-        fetch(`https://booking-college-server-side.vercel.app/allUsers?email=${user?.email}`)
-            .then(a => a.json())
-            .then(a => setData(a))
-            .catch(error => console.log(error))
-    }, [user]);
+        console.log(info)
 
+        const {address,email,university,name}=info;
 
-    console.log(data)
-
-    const onSubmit = data => {
-
-        console.log(data)
-
+        
+      const allInfo ={
+        name:name|| data?.name,
+        email:email||data?.email,
+        address:address|| data?.address,
+        university:university || data?.university
+      }
         fetch(`https://booking-college-server-side.vercel.app/updateUser?email=${user?.email}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
             },
 
-            body: JSON.stringify(data)
+            body: JSON.stringify(allInfo)
         })
             .then(res => res.json())
             .then((res) => {
 
                 
 
-                if (res?.modifiedCount >0) {
+                if (res.modifiedCount>0) {
 
                     
 
                     console.log(res)
                     reset();
-                    window.location.reload()
+                    profileRefetch()
 
                     toast.success("Update done")
                 }
@@ -79,7 +81,7 @@ const Profile = () => {
                         <p className="my-2">
                             <span className="font-[500] text-[17px] ">Name</span>
                         </p>
-                        <input type="text" placeholder={data?.name}  {...register("name", { required: true })} className="input input-bordered w-full" />
+                        <input type="text" placeholder={data?.name}  {...register("name", )} className="input input-bordered w-full" />
 
                         {errors.name && <p className=' text-red-500 my-3' >name is required</p>}
                     </div>
@@ -99,7 +101,7 @@ const Profile = () => {
                         <p className="  my-2">
                             <span className="font-[500] text-[17px]  ">University</span>
                         </p>
-                        <input type="text" placeholder={data?.university}  {...register("university", { required: true })} className="input input-bordered w-full" />
+                        <input type="text" placeholder={data?.university}  {...register("university", )} className="input input-bordered w-full" />
                         {errors.university && <p className=' text-red-500 my-3' >university is required</p>}
                     </div>
 
@@ -108,7 +110,7 @@ const Profile = () => {
                         <p className=" my-2">
                             <span className="font-[500] text-[17px]  ">Address</span>
                         </p>
-                        <input type="text" placeholder={data?.address} {...register("address", { required: true })} className="input input-bordered w-full" />
+                        <input type="text" placeholder={data?.address} {...register("address", )} className="input input-bordered w-full" />
 
                         {errors.address && <p className=' text-red-500 my-3' >address is required</p>}
                     </div>

@@ -17,6 +17,8 @@ const College = () => {
 
     useEffect(() => {
 
+        // fetch('https://booking-college-server-side.vercel.app/allCollages')
+        
         fetch('https://booking-college-server-side.vercel.app/allCollages')
             .then(a => a.json())
             .then(a => setData(a))
