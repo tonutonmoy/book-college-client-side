@@ -3,13 +3,13 @@
 const HomeReachPaper = () => {
     return (
         <div>
-            <h2 className=" text-[40px] font-[500] text-center my-[50px] ">Reach Papers</h2>
+            <h2 className=" text-[40px] font-[500] text-center my-[50px]  ">Reach Papers</h2>
 
 
-            <div className=" space-y-[50px]">
+            <div className=" space-y-[50px] bg-gray-700    p-10 rounded-[1000%] ">
 
-                <section >
-                    <p className="text-[18px] md:text-[18px] lg:text-[20px] xl:text-[25px] 2xl:text-[25px] text-[700] my-5">1. <a className="text-red-500 " href="https://www.jstor.org/">JSTOR</a></p>
+                <section  className=" bg-gray-700/20 border p-4 hover:bg-gray-700 ">
+                    <p className="text-[18px] md:text-[18px] lg:text-[20px] xl:text-[25px] 2xl:text-[25px] text-[700] mb-2 ">1. <a className="text-red-500 " href="https://www.jstor.org/">JSTOR</a></p>
 
                     <p className="ml-[30px] text-[14px] md:text-[14px] lg:text-[15px] xl:text-[16px] 2xl:text-[16px]">For journal articles, books, images, and even primary sources, JSTOR ranks among the best online resources for academic research. JSTOR's collection spans 75 disciplines, with strengths in the humanities and social sciences. The academic research database includes complete runs of over 2,800 journals.
 
@@ -18,7 +18,7 @@ const HomeReachPaper = () => {
 
 
 
-                <section >
+                <section  className=" bg-gray-700/50 border p-4 hover:bg-gray-700 ">
                     <p className="text-[18px] md:text-[18px] lg:text-[20px] xl:text-[25px] 2xl:text-[25px] text-[700] my-5">2.
                         <a className="text-red-500" href="https://www.loc.gov/"> Library of Congress</a></p>
 
@@ -29,7 +29,7 @@ const HomeReachPaper = () => {
 
 
 
-                <section >
+                <section  className=" bg-gray-700/50 border p-4 hover:bg-gray-700">
                     <p className="text-[18px] md:text-[18px] lg:text-[20px] xl:text-[25px] 2xl:text-[25px] text-[700] my-5">3.
                         <a className="text-red-500" href="https://www.ncbi.nlm.nih.gov/pmc/"> PubMed Central</a></p>
 
@@ -39,7 +39,7 @@ const HomeReachPaper = () => {
                 </section>
 
 
-                <section>
+                <section  className=" bg-gray-700/50 border p-4 hover:bg-gray-700">
                     <p className="text-[18px] md:text-[18px] lg:text-[20px] xl:text-[25px] 2xl:text-[25px] text-[700] my-5">4.
                         <a className="text-red-500" href="https://www.science.gov/"> Science.govl</a></p>
 
@@ -49,7 +49,7 @@ const HomeReachPaper = () => {
                 </section>
 
 
-                <section >
+                <section  className=" bg-gray-700/50 border p-4 hover:bg-gray-700">
                     <p className="text-[18px] md:text-[18px] lg:text-[20px] xl:text-[25px] 2xl:text-[25px] text-[700] my-5">5.
                         <a className="text-red-500" href="https://www.bestcolleges.com/blog/get-most-out-of-university-library/"> University Library</a></p>
 

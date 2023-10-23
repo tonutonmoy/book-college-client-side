@@ -71,7 +71,7 @@ const Profile = () => {
     return (
         <div className='w-[90%] mx-auto py-[150px]'>
 
-            <section  className=' lg:w-[50%] md:w-[50%] mx-auto p-10 rounded-[30px] bg-red-500 space-y-5 shadow-md shadow-gray-900'>
+            <section  className=' lg:w-[50%] md:w-[50%] mx-auto p-10 rounded-[30px] bg-gray-700/50 border space-y-5 shadow-md shadow-gray-700'>
                 <form onSubmit={handleSubmit(onSubmit)}  >
 
                     <h2 className=" text-[40px] font-[500] text-center my-[50px]  ">Profile</h2>

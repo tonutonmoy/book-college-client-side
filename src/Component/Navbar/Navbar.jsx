@@ -174,59 +174,27 @@
 
 // export default Navbar;
 
-import React, { useContext, useState } from "react";
+import  { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import UseSingleUser from "../../Hooks/useSingleUser";
-import Autosuggest from "react-autosuggest";
+
 
 import './Navbar.css'
 import SearchBar from "./SearchBar";
 
 const Navbar = () => {
-    const { user, setCollegeData, logOut } = useContext(AuthContext);
+    const { user, logOut } = useContext(AuthContext);
     const navigate = useNavigate();
     const [data, profileRefetch] = UseSingleUser(user?.email);
 
     profileRefetch();
 
-    const [suggestions, setSuggestions] = useState([]);
-    const [value, setValue] = useState("");
 
-    const getSuggestions = async (inputValue) => {
-        try {
-            // Implement your logic to fetch suggestions here.
-            // For example, you can fetch suggestions from your server based on the inputValue.
-            const response = await fetch(`https://booking-college-server-side.vercel.app/singleCollage/${inputValue}`);
-            if (response.ok) {
-                const data = await response.json();
-                setSuggestions(data);
-            } else {
-                // Handle errors
-            }
-        } catch (error) {
-            console.error("An error occurred while searching:", error);
-        }
-    };
 
-    const onSuggestionsFetchRequested = ({ value }) => {
-        getSuggestions(value);
-    };
-
-    const onSuggestionsClearRequested = () => {
-        setSuggestions([]);
-    };
-
-    const inputProps = {
-        placeholder: "Search...",
-        value,
-        onChange: (event, { newValue }) => {
-            setValue(newValue);
-        },
-    };
-
+ 
     const loginHandler = () => {
         navigate("/login");
     };
@@ -239,38 +207,15 @@ const Navbar = () => {
             })
             .catch((error) => console.log(error));
     };
-    const [selectedSuggestion, setSelectedSuggestion] = useState(null);
-    const ClickHandler=(id)=>{
-        navigate(`/detailsPage/${id}`)
 
-        console.log(id,'tonu')
 
-    }
-    
-    
-   
+
+
     const listItem = (
         <>
-         <div className="autosuggest-container mt-2">
-                    {/* <Autosuggest
-                        suggestions={suggestions}
-                        onSuggestionsFetchRequested={onSuggestionsFetchRequested}
-                        onSuggestionsClearRequested={onSuggestionsClearRequested}
-                        getSuggestionValue={(suggestion) => suggestion.name}
-                        renderSuggestion={(suggestion) => (
-                            // <div className="suggestions-container text-left">
-                               
-                                <ul className="suggestions-container text-left p-0 m-0" >
-                                    <li  onClick={()=>ClickHandler(suggestion?._id)} className='text-white text-left  w-full hover:text-red-500'>{suggestion?.name}</li>
-                                </ul>
-                            // </div>
-                        )}
-                        inputProps={inputProps}
-                        
-                        
-                    />
-   */}
-    <SearchBar/>
+            <div className="autosuggest-container mt-2">
+
+                <SearchBar />
 
 
 
@@ -281,7 +226,7 @@ const Navbar = () => {
 
 
 
-                </div>
+            </div>
             <Link className="md:mx-5 font-[500] text-[17px] mt-3 md:text-white" to='/'>Home</Link>
             <Link className="md:mx-5 font-[500] text-[17px] mt-3 md:text-white" to='college'>College</Link>
             <Link className="md:mx-5 font-[500] text-[17px] mt-3 md:text-white" to='admission'>Admission</Link>
@@ -300,7 +245,7 @@ const Navbar = () => {
     );
 
     return (
-        <div className="navbar mx-auto fixed bg-slate-700 z-10 ">
+        <div className="navbar mx-auto fixed bg-slate-700 z-30 ">
             <div className="navbar-start w-[90%] ">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -322,7 +267,7 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-               
+
 
                 <ToastContainer />
             </div>
