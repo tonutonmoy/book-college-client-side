@@ -3,12 +3,16 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
+import { Rating , ThinStar,Heart,Star} from '@smastrom/react-rating'
+
+import '@smastrom/react-rating/style.css'
 
 
 
 // import required modules
 import { Pagination } from 'swiper/modules';
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 
 const HomeReview = () => {
@@ -21,70 +25,92 @@ const HomeReview = () => {
             .then(a => a.json())
             .then(a => setData(a))
             .catch(error => console.log(error))
-    }, [])
+    }, []);
 
-    console.log(data)
+  
+
+
+    console.log(data,'d')
+
+    const windowWidth = window.innerWidth;
+
+   
+
+    let width=1;
+
+    if(425<windowWidth){
+        width=2
+    }
+    else if(768<windowWidth){
+        width=5
+    }
+    const myStyles = {
+        itemShapes: Star,
+
+    activeFillColor: "#b91c1c",
+
+    inactiveFillColor: "#d6d3d1",
+      }
+    
     return (
         <div className='my-[150px]'>
             <h2 className=" text-[40px] font-[500] text-center my-[50px] ">Top Review</h2>
             <Swiper
-                slidesPerView={2}
+                slidesPerView={width}
                 spaceBetween={30}
                 pagination={{
                     clickable: true,
                 }}
                 modules={[Pagination]}
-                className="mySwiper  h-[500px] md:h-[700px] lg:h-[700px] my-[50px]  
+                className="mySwiper   
                 "
-                style={{boxShadow:'-10px 10px 20px black,10px 10px 20px black'}}
+               
             >
                 {data.map(a => <SwiperSlide key={a?._id}>
 
 
 
-                    <div style={{boxShadow:'10px 10px 20px black'}}
-                        className="card card-compact w-[90%] mx-auto h-[90%] bg-base-100 mt-[20px] shadow-xl hover:scale-105
-                         duration-[1s] overflow-scroll  ">
-                        <img className='h-[200px] md:h-[300px]' src={a?.collegeInfo?.collegeDetails?.img} alt="Shoes" />
-                        <div className="card-body">
+      <card className="w-full  bg-red-500  ">
+        <div className="relative">
 
-                            <p className=" text-[13px] md:text-[17px] lg:text-[17px] mt-5 font-[400]">
-                                <span className=" font-[500]">College name: </span>
+        
+         <div className=''>
 
-                                {a?.collegeInfo?.collegeDetails?.name}
+        
+            <img src={a?.collegeInfo?.collegeDetails?.img} className="w-full h-[200px] " />
+            </div>
 
-                            </p>
+          <p className="absolute right-2 bottom-2 bg-gray-900 text-gray-100 text-xs px-1 py">1:15</p>
+        </div>
 
-                            <p className=" text-[13px] md:text-[17px] lg:text-[17px]  font-[400]">
-                                <span className=" font-[500]">Name: </span>
+        <div className="flex flex-row mt-2 gap-2">
+          
+     
+          
+            <img src={a?.collegeInfo?.image} className="rounded-full max-h-10 w-10 md:w-10 lg:w-10 xl:w-12 2xl:w-12" />
+         
 
-                                {a?.collegeInfo?.name}
-
-
-                            </p>
-
-                            <p className=" text-[13px] md:text-[17px] lg:text-[17px]  font-[400]">
-                                <span className=" font-[500]">Email: </span>
-
-                                {a?.collegeInfo?.email}
-
-                            </p>
-                            <p className=" text-[13px] md:text-[17px] lg:text-[17px] font-[400]">
-                                <span className=" font-[500]">Rating: </span>
-
-                                {a?.rating}
-
-                            </p>
-                            <p className=" text-[13px] md:text-[17px] lg:text-[17px]  font-[400] ">
-                                <span className=" font-[500]">Review: </span>
-
-                                {a?.review}...
-
-                            </p>
-                        </div>
-                    </div>
-
-
+        
+          <div className="flex flex-col  overflow-x-auto w-full">
+            <Link >
+              <p className=" text-sm font-semibold">{a?.collegeInfo?.collegeDetails?.name}</p>
+            </Link>
+            
+            <p className="text-gray-200 text-xs mt-1"> {a?.collegeInfo?.name}</p>
+            <p className="text-gray-400 text-xs mt-1 "> 
+            <Rating
+                  readOnly
+                  value={a?.rating}
+                  style={{ maxWidth: 100 }}
+                  itemStyles={myStyles}
+                /> </p>
+            <p className="text-gray-200 text-xs mt-1  "> {a?.review}</p>
+           
+          </div>
+          
+        </div>
+      </card>
+   
 
 
 

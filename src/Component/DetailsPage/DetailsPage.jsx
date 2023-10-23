@@ -1,20 +1,15 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import UseCollageDetails from "../../Hooks/useCollageDetails";
 
 
 const DetailsPage = () => {
 
     const {id}=useParams();
 
-    const [data, setData] = useState([]);
+   
 
-    useEffect(() => {
-
-        fetch(`https://booking-college-server-side.vercel.app/allCollages/${id}`)
-            .then(a => a.json())
-            .then(a => setData(a))
-            .catch(error => console.log(error))
-    }, [])
+    const [data]=UseCollageDetails(id)
 
     console.log(data)
     return (
@@ -24,7 +19,7 @@ const DetailsPage = () => {
 
         <div style={{boxShadow:'-10px 10px 20px black,10px 10px 20px black'}} className="card card-compact w-full bg-base-100 shadow-xl">
             <figure><img src={data?.img} alt="Shoes" /></figure>
-            <div className="card-body">
+            <div className="card-body text-black">
 
                 <section className=" space-y-10 my-10">
 

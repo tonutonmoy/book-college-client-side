@@ -126,7 +126,7 @@ const Admission = () => {
 
 
 
-                            <div className="card card-compact  bg-base-100 shadow-xl my-10 hover:scale-110 duration-[1s]
+                            <div className="card card-compact  border border-white  shadow-xl my-10 bg-slate-700 hover:scale-105
                             hover:bg-gradient-to-r from-gray-700 via-gray-900 to-black hover:text-white">
 
                                 <div className="card-body">
@@ -162,8 +162,8 @@ const Admission = () => {
 
             {/* You can open the modal using ID.showModal() method */}
 
-            <dialog id="my_modal_4" className="modal">
-                <form method="dialog" className="modal-box w-11/12 max-w-5xl  ">
+            <dialog id="my_modal_4" className="modal ">
+                <form method="dialog" className="modal-box w-11/12 max-w-5xl  bg-slate-700 border border-white  ">
 
                     <section className="grid md:grid-cols-3 lg:grid-cols-3 ">
 
@@ -171,21 +171,21 @@ const Admission = () => {
                             <p className="text-center my-2">
                                 <span className="font-[500] text-[17px] ">Candidate name</span>
                             </p>
-                            <input type="text" placeholder="name" ref={name} className="input input-bordered" />
+                            <input type="text" placeholder="name" ref={name} className="input input-bordered text-black" />
                         </div>
 
                         <div className="text-center my-5">
                             <p className=" text-center my-2">
                                 <span className="font-[500] text-[17px]  ">Candidate email</span>
                             </p>
-                            <input type="text" placeholder="email" ref={email} className="input input-bordered" />
+                            <input type="text" placeholder="email" ref={email} className="input input-bordered text-black" />
                         </div>
 
                         <div className="text-center my-5">
                             <p className=" text-center my-2">
                                 <span className="font-[500] text-[17px]  ">Candidate date of birth</span>
                             </p>
-                            <input type="text" placeholder="date of birth" ref={birth} className="input input-bordered" />
+                            <input type="text" placeholder="date of birth" ref={birth} className="input input-bordered text-black" />
                         </div>
 
 
@@ -193,28 +193,28 @@ const Admission = () => {
                             <p className=" text-center my-2">
                                 <span className="font-[500] text-[17px]  ">Candidate address</span>
                             </p>
-                            <input type="text" placeholder="address" ref={address} className="input input-bordered" />
+                            <input type="text" placeholder="address" ref={address} className="input input-bordered text-black" />
                         </div>
 
                         <div className="text-center my-5">
                             <p className=" text-center my-2">
                                 <span className="font-[500] text-[17px]  ">Candidate subject</span>
                             </p>
-                            <input type="text" placeholder="subject" ref={subject} className="input input-bordered" />
+                            <input type="text" placeholder="subject" ref={subject} className="input input-bordered text-black" />
                         </div>
 
                         <div className="text-center my-5">
                             <p className=" text-center my-2">
                                 <span className="font-[500] text-[17px] ">Candidate number</span>
                             </p>
-                            <input type="text" placeholder="number" ref={number} className="input input-bordered" />
+                            <input type="text" placeholder="number" ref={number} className="input input-bordered text-black" />
                         </div>
 
                         <div className="text-center my-5">
                             <p className=" text-center my-2">
                                 <span className="font-[500] text-[17px]  ">Candidate image</span>
                             </p>
-                            <input type="text" placeholder="image" ref={image}  className="input input-bordered" />
+                            <input type="text" placeholder="image" ref={image}  className="input input-bordered text-black" />
                         </div>
 
 
@@ -223,9 +223,9 @@ const Admission = () => {
 
                     <div className="modal-action">
                         {/* if there is a button, it will close the modal */}
-                        <button onClick={submitForm} className="btn bg-green-500 text-white">Submit</button>
+                        <button onClick={submitForm} className="p-3 rounded-md bg-blue-500 text-white">Submit</button>
 
-                        <button className="btn bg-red-500 text-white">Close</button>
+                        <button className=" p-3 rounded-md bg-red-500 text-white">Close</button>
 
                     </div>
 

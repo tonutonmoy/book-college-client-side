@@ -1,0 +1,52 @@
+.autosuggest-container {
+  position: relative;
+  display: inline-block; /* or block, depending on your layout */
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  height: 30px;
+  
+
+}
+
+
+/* Style the input field */
+.autosuggest-container .react-autosuggest__input {
+  /* Add your styles here */
+
+  width: 300px;
+  background-color: #334155;
+  color: white;
+  padding-left: 10px;
+  padding-top: 2px;
+  
+ 
+}
+
+/* Position the suggestions dropdown */
+.autosuggest-container .react-autosuggest__suggestions-container {
+  position: absolute;
+  top: 100%; /* Adjust the distance from the input field */
+  left: 0; /* Adjust horizontal position */
+  z-index: 1; /* Ensure it appears above other content */
+  width: 100%; /* Set the width to match the input field */
+  background: white; /* Background color for the dropdown */
+  border: 1px solid #ccc; /* Add a border to the dropdown */
+  background-color: #334155;
+
+  border-radius: 0 0 5px 5px;
+
+}
+
+/* Style individual suggestions */
+.autosuggest-container .react-autosuggest__suggestion {
+  padding: 8px 12px;
+  cursor: pointer;
+
+
+  
+  
+}
+.autosuggest-container .react-autosuggest__input:focus {
+  outline: none;
+}
+

@@ -71,7 +71,7 @@ const Profile = () => {
     return (
         <div className='w-[90%] mx-auto py-[150px]'>
 
-            <section style={{ boxShadow: '-10px 10px 10px black,10px -10px 10px black' }} className=' lg:w-[50%] md:w-[50%] mx-auto p-10 rounded-[30px] space-y-5'>
+            <section  className=' lg:w-[50%] md:w-[50%] mx-auto p-10 rounded-[30px] bg-red-500 space-y-5 shadow-md shadow-gray-900'>
                 <form onSubmit={handleSubmit(onSubmit)}  >
 
                     <h2 className=" text-[40px] font-[500] text-center my-[50px]  ">Profile</h2>
@@ -81,7 +81,7 @@ const Profile = () => {
                         <p className="my-2">
                             <span className="font-[500] text-[17px] ">Name</span>
                         </p>
-                        <input type="text" placeholder={data?.name}  {...register("name", )} className="input input-bordered w-full" />
+                        <input type="text" placeholder={data?.name}  {...register("name", )} className="input input-bordered w-full text-gray-900" />
 
                         {errors.name && <p className=' text-red-500 my-3' >name is required</p>}
                     </div>
@@ -90,7 +90,7 @@ const Profile = () => {
                         <p className="  my-2">
                             <span className="font-[500] text-[17px]  ">Email</span>
                         </p>
-                        <input type="email" placeholder="email" value={data?.email} {...register("email")} className="input input-bordered w-full" />
+                        <input type="email" placeholder="email" value={data?.email} {...register("email")} className="input input-bordered w-full text-gray-900" />
 
                         {errors.email && <p className=' text-red-500 my-3' >email is required</p>}
                     </div>
@@ -101,7 +101,7 @@ const Profile = () => {
                         <p className="  my-2">
                             <span className="font-[500] text-[17px]  ">University</span>
                         </p>
-                        <input type="text" placeholder={data?.university}  {...register("university", )} className="input input-bordered w-full" />
+                        <input type="text" placeholder={data?.university}  {...register("university", )} className="input input-bordered w-full text-gray-900" />
                         {errors.university && <p className=' text-red-500 my-3' >university is required</p>}
                     </div>
 
@@ -110,7 +110,7 @@ const Profile = () => {
                         <p className=" my-2">
                             <span className="font-[500] text-[17px]  ">Address</span>
                         </p>
-                        <input type="text" placeholder={data?.address} {...register("address", )} className="input input-bordered w-full" />
+                        <input type="text" placeholder={data?.address} {...register("address", )} className="input input-bordered w-full text-gray-900" />
 
                         {errors.address && <p className=' text-red-500 my-3' >address is required</p>}
                     </div>
@@ -122,7 +122,7 @@ const Profile = () => {
 
 
 
-                    <input className='btn bg-red-500 text-white' type="submit" />
+                    <button className=' font-[500] px-[10px] py-2 border rounded-2xl bg-red-500 text-white' type="submit" > Submit</button>
                 </form>
 
                 <ToastContainer />
@@ -130,6 +130,7 @@ const Profile = () => {
             </section>
 
         </div>
+        
     );
 };
 

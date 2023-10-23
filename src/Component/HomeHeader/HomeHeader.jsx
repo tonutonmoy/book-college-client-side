@@ -1,24 +1,64 @@
-import './HomeHeader.css'
 
-const HomeHeader = () => {
+
+import img from '../../assets/header/pexels-leah-kelley-373465.jpg'
+
+
+
+  const HomeHeader = () => {
     return (
-        <div className='home-header relative h-[800px] md:h-[700px]  lg:h-[700px]  ' style={{boxShadow:'-10px 10px 20px black,10px 10px 20px black'}}>
-
-            <div style={{boxShadow:'-10px 10px 20px black,10px 10px 20px black'}} className=' w-[90%] mx-auto absolute 
-            top-[20%] left-[5%]  p-[30px]  hover:scale-105 duration-[1s]'>
-                <h2 className='md:text-[60px] lg:text-[60px]  text-[30px] font-[500] text-center w-[50%] mx-auto text-white mb-3 
-                text-transparent  bg-clip-text 
-                bg-[conic-gradient(at_top,_var(--tw-gradient-stops))] from-gray-900 via-gray-100 to-gray-900'>The Best College Websites</h2>
-
-                <p className=' text-white text-[17px] md:text-[20px] font-[400] md:w-[50%] lg:w-[50%] mx-auto'>When prospective students navigate to your college’s website, what type of experience are they met with? Do they land on a generic site that feels disconnected from your college’s brand and is complicated to navigate? Or, are they met with an authentic digital experience that immediately welcomes them into your college’s community and makes it easy to learn more?</p>
-            </div>
-
-            <div className=' bg-gradient-to-r from-black to-black/30  w-full h-full'>
-
-            </div>
-            
+      <div className="relative flex flex-col-reverse py-16 lg:pt-0 lg:flex-col lg:pb-0  bg-slate-700  shadow-md border-red-500 border-b-[15px] " >
+        <div className="inset-y-0 top-0 right-0 z-0 w-full max-w-xl px-4 mx-auto md:px-0 lg:pr-0 lg:mb-0 lg:mx-0 lg:w-7/12 lg:max-w-full lg:absolute xl:px-0">
+          <svg
+            className="absolute left-0 hidden h-full text-white transform -translate-x-1/2 lg:block "
+            viewBox="0 0 100 100"
+            fill="#ef4444"
+            // fill="#334155"
+            preserveAspectRatio="none slice"
+          >
+            <path d="M50 0H100L50 100H0L50 0Z" />
+          </svg>
+          <img
+            className="object-cover w-full h-56 rounded shadow-lg lg:rounded-none lg:shadow-none md:h-96 lg:h-full  "
+            src={img}
+            alt=""
+          />
         </div>
+        <div className="relative flex flex-col items-start w-full max-w-xl px-4 mx-auto md:px-0 lg:px-8 lg:max-w-screen-xl ">
+          <div className="mb-16 lg:my-40 lg:max-w-lg lg:pr-5 ">
+            <p className="inline-block px-3 py-px mb-4 text-xs font-semibold tracking-wider text-teal-900 uppercase rounded-full bg-teal-accent-400">
+              Brand new
+            </p>
+            <h2 className="mb-5 font-sans text-3xl font-bold tracking-tight text-white sm:text-4xl sm:leading-none">
+              Everything you
+              <br className="hidden md:block" />
+              can imagine{' '}
+              <span className="inline-block text-deep-purple-accent-400">
+                is real
+              </span>
+            </h2>
+            <p className="pr-5 mb-5 text-base text-gray-100 md:text-lg ">
+              Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+              accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
+              quae. explicabo.
+            </p>
+            <div className="flex items-center">
+              <button
+               
+                className="inline-flex items-center justify-center h-12 px-6 mr-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-sm   bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none bg-red-500 "
+              >
+                Get started
+              </button>
+              <button
+               
+                className="inline-flex items-center font-semibold  transition-colors duration-200 hover:text-deep-purple-accent-700  text-white"
+              >
+                Learn more
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
     );
-};
+  };
 
-export default HomeHeader;
+  export default HomeHeader

@@ -10,9 +10,13 @@ function App() {
 
 
   return (
-    <div>
+    <div className='bg-gradient-to-r from-slate-500 to-slate-500  text-white'>
+  
       <Navbar></Navbar>
+      
       <Outlet></Outlet>
+    
+    
 
       <Footer></Footer>
     </div>
