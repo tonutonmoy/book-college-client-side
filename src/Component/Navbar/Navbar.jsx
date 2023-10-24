@@ -239,7 +239,7 @@ const Navbar = () => {
             {user?.email ? (
                 <button onClick={logOutHandler} className=" px-[20px]  hover:bg-red-600 bg-red-500 font-[500] rounded-md">Logout</button>
             ) : (
-                <button onClick={loginHandler} className="p-[10px] md:mr-10 mt-5 md:mt-0 rounded-[10px] text-[15px] text-white bg-blue-500 font-semibold ml-2" to='login'>Login</button>
+                <button onClick={loginHandler} className="p-[10px] md:mr-10 mt-5 md:mt-0 rounded-[10px] text-[15px] text-white bg-gray-900 font-semibold ml-2" to='login'>Login</button>
             )}
         </>
     );
