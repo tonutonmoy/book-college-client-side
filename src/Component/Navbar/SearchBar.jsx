@@ -93,7 +93,7 @@ useEffect(() => {
 }, []);
   return (
     <div>
-    <div className='border-none w-[300px] ' ref={buttonRef}>
+    <div className='border-none w-full md:w-full  lg:w-[150px]  xl:w-[250px]  2xl:w-[300px]   ' ref={buttonRef}>
         <form className=' flex items-center '  onSubmit={SearchHandler} >
       <input
         type="text"

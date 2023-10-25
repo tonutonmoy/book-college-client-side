@@ -245,7 +245,7 @@ const Navbar = () => {
     );
 
     return (
-        <div className="navbar mx-auto fixed bg-slate-700 z-30 ">
+        <div className="navbar mx-auto fixed bg-slate-700 z-30   ">
             <div className="navbar-start w-[90%] ">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -253,7 +253,7 @@ const Navbar = () => {
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" />
                         </svg>
                     </label>
-                    <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 flex items-center">
+                    <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow  rounded-box w-52 flex items-center bg-slate-700 space-y-4  ">
                         {listItem}
                     </ul>
                 </div>
@@ -262,7 +262,7 @@ const Navbar = () => {
                 </Link>
             </div>
             <div className="navbar-center hidden lg:flex">
-                <ul className="menu menu-horizontal px-1">
+                <ul className="menu menu-horizontal px-1 ">
                     {listItem}
                 </ul>
             </div>

@@ -33,26 +33,26 @@ const Admission = () => {
     const submitForm = () => {
 
 
-        if(!name.current.value){
+        if (!name.current.value) {
 
             return toast.error("Name in missing")
         }
-        else if(!email.current.value){
+        else if (!email.current.value) {
             return toast.error("email in missing")
         }
-        else if(!birth.current.value){
+        else if (!birth.current.value) {
             return toast.error("birth in missing")
         }
-        else if(!address.current.value){
+        else if (!address.current.value) {
             return toast.error("address in missing")
         }
-        else if(!subject.current.value){
+        else if (!subject.current.value) {
             return toast.error("subject in missing")
         }
-        else if(!number.current.value){
+        else if (!number.current.value) {
             return toast.error("number in missing")
         }
-        else if(!image.current.value){
+        else if (!image.current.value) {
             return toast.error("image in missing")
         }
 
@@ -117,7 +117,7 @@ const Admission = () => {
             <section className=" py-[100px]">
                 <h2 className=" text-[40px] font-[500] text-center my-[50px] ">Admission colleges</h2>
 
-                <div className="grid md:grid-cols-3 gap-10 ">
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-3 gap-10 ">
 
 
 
@@ -126,28 +126,25 @@ const Admission = () => {
 
 
 
-                            <div className="card card-compact  border border-white  shadow-xl my-10 bg-slate-700 hover:scale-105
-                            hover:bg-gradient-to-r from-gray-700 via-gray-900 to-black hover:text-white">
+                           
 
-                                <div className="card-body">
-
-
-
-                                    <button onClick={() => {
+                            <div className="absolute inset-0 bg-center dark:bg-black"></div>
+                            <div onClick={() => {
 
 
-                                        singleDataHandler(a)
+                                singleDataHandler(a)
 
-                                    }} className=" text-[17px] font-[500]">
-                                        {a?.name}
-
-
-
-                                    </button>
-
-
-
-
+                            }} className="group relative m-0 flex h-72 cursor-pointer  rounded-xl shadow-xl ring-gray-900/5 sm:mx-auto sm:max-w-lg">
+                                <div className="z-10 h-full w-full overflow-hidden rounded-xl border border-gray-200 opacity-80 transition duration-300 ease-in-out group-hover:opacity-100 dark:border-gray-700 dark:opacity-70">
+                                    <img
+                                        src={a?.img}
+                                        className="animate-fade-in block h-full w-full scale-100 transform object-cover object-center opacity-100 transition duration-300 group-hover:scale-110"
+                                        alt=""
+                                    />
+                                </div>
+                                <div className="absolute bottom-0 z-20 m-0 pb-4 ps-4 transition duration-300 ease-in-out group-hover:-translate-y-1 group-hover:translate-x-3 group-hover:scale-110">
+                                    <h1 className="font-serif text-2xl font-bold text-white shadow-xl">{a?.name}</h1>
+                                    <h1 className="text-sm font-light text-gray-200 shadow-xl">Click it</h1>
                                 </div>
                             </div>
 
@@ -162,8 +159,8 @@ const Admission = () => {
 
             {/* You can open the modal using ID.showModal() method */}
 
-            <dialog id="my_modal_4" className="modal ">
-                <form method="dialog" className="modal-box w-11/12 max-w-5xl  bg-slate-700 border border-white  ">
+            <dialog  id="my_modal_4" className="modal ">
+                <form  method="dialog" className="modal-box w-11/12 max-w-5xl  bg-slate-700 border border-white  ">
 
                     <section className="grid md:grid-cols-3 lg:grid-cols-3 ">
 
@@ -214,7 +211,7 @@ const Admission = () => {
                             <p className=" text-center my-2">
                                 <span className="font-[500] text-[17px]  ">Candidate image</span>
                             </p>
-                            <input type="text" placeholder="image" ref={image}  className="input input-bordered text-black" />
+                            <input type="text" placeholder="image" ref={image} className="input input-bordered text-black" />
                         </div>
 
 

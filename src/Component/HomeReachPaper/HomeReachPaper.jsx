@@ -6,7 +6,7 @@ const HomeReachPaper = () => {
             <h2 className=" text-[40px] font-[500] text-center my-[50px]  ">Reach Papers</h2>
 
 
-            <div className=" space-y-[50px] bg-gray-700    p-10 rounded-[1000%] ">
+            <div className=" space-y-[50px]    lg:bg-gray-700  xl:bg-gray-700  2xl:bg-gray-700    md:p-10 lg:p-10 xl:p-10 2xl:p-10 rounded-[1000%] ">
 
                 <section  className=" bg-gray-700/20 border p-4 hover:bg-gray-700 ">
                     <p className="text-[18px] md:text-[18px] lg:text-[20px] xl:text-[25px] 2xl:text-[25px] text-[700] mb-2 ">1. <a className="text-red-500 " href="https://www.jstor.org/">JSTOR</a></p>
