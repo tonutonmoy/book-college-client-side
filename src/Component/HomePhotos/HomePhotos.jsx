@@ -1,15 +1,18 @@
+import { useContext } from 'react'
 import img1 from '../../assets/homePhotos/pexels-arif-syuhada-5227311.jpg'
 import img2 from '../../assets/homePhotos/pexels-feedyourvision-1184580.jpg'
 import img3 from '../../assets/homePhotos/pexels-george-pak-7972744.jpg'
 import img4 from '../../assets/homePhotos/pexels-hai-nguyen-1699414.jpg'
 import img5 from '../../assets/homePhotos/pexels-king-cyrus-studios-6371893.jpg'
 import img6 from '../../assets/homePhotos/pexels-saiful-haizad-5508486.jpg'
+import { AuthContext } from '../../Provider/AuthProvider'
 
 
 
 
 
 const HomePhotos = () => {
+  const {mode}=useContext(AuthContext)
   return (
   
     <div className="flex justify-center items-center ">

@@ -106,6 +106,26 @@ const AuthProvider = ({ children }) => {
     }, [])
 
 
+    // dark mode start
+    const [mode, setMode] = useState(localStorage.getItem('mode') === 'dark' || false);
+
+    // Update the local storage and mode when the user changes the mode.
+    const handleCheckboxChange = () => {
+      const newMode = !mode;
+      setMode(newMode);
+      localStorage.setItem('mode', newMode ? 'dark' : 'light');
+    };
+  
+    // Add an effect to update the mode state when the component mounts.
+    useEffect(() => {
+      const storedMode = localStorage.getItem('mode');
+      if (storedMode) {
+        setMode(storedMode === 'dark');
+      }
+    }, []);
+    //  dark mode end
+
+
     const authInfo = {
         createUser,
         updateUserProfile,
@@ -117,7 +137,9 @@ const AuthProvider = ({ children }) => {
         loading,
         collegeData,
         setCollegeData,
-        facebookLogin
+        facebookLogin,
+        mode,
+        setMode,handleCheckboxChange 
     }
     return (
         <AuthContext.Provider value={authInfo}>

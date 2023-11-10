@@ -1,7 +1,10 @@
+import { useContext } from "react";
+import { AuthContext } from "../../Provider/AuthProvider";
 
 const Footer = () => {
+    const { mode } = useContext(AuthContext);
     return (
-        <footer className=" p-10 bg-black  text-white ">
+        <footer className={` ${mode? 'bg-black/50' :'bg-slate-700 '} p-10  text-white `}>
 
             <div className=" footer w-[90%] mx-auto justify-between my-10">
 

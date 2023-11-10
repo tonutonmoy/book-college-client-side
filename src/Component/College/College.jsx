@@ -53,8 +53,8 @@ const navigate=useNavigate()
 <div 
            className="card card-compact shadow-xl hover:shadow-md   my-10  bg-slate-700 border  border-white rounded-[10px] 
              ">
-            <div className="bg-red-500 ">
-            <img  className="h-[200px] md:h-[200px] lg:h-[250px]  xl:h-[250px]  2xl:h-[250px]  w-full  rounded-b-[50%] border-b-2  " src={a?.img} alt="Shoes" />
+            <div className="bg-red-500 rounded-t-[10px] ">
+            <img  className="h-[200px] md:h-[200px] lg:h-[250px]  xl:h-[250px]  2xl:h-[250px]  w-full  rounded-b-[50%] border-b-2 rounded-t-[10px] " src={a?.img} alt="Shoes" />
             </div>
               <div className="card-body   text-white  border-t-[1px]">
 
